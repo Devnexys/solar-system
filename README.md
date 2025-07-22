@@ -195,6 +195,9 @@ Upload all files to any web server. No special configuration needed!
 - Check mobile CSS media queries
 - Adjust panel positioning in `style.css`
 
+## 🌍 Live Demo  
+[View Solar System Project](https://3d-solar-system-viewer.vercel.app)
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
