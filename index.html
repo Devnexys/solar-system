@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System 3D Visualization</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script src="orbit-controls.js"></script>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader"></div>
+        <p>Loading Solar System...</p>
+    </div>
+
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <h1>3D Solar System</h1>
+            <div class="header-controls">
+                <button id="theme-toggle" class="btn theme-btn" title="Toggle dark/light mode">
+                    <span id="theme-icon">🌙</span>
+                </button>
+                <button id="pause-resume" class="btn control-btn">⏸️ Pause</button>
+            </div>
+        </header>
+
+        <!-- 3D Scene Container -->
+        <div id="scene-container">
+            <canvas id="solar-system-canvas"></canvas>
+        </div>
+
+        <!-- Control Panel -->
+        <div id="control-panel" class="control-panel">
+            <div class="panel-header">
+                <h3>Planet Controls</h3>
+                <button id="toggle-panel" class="btn toggle-btn">📊</button>
+            </div>
+            
+            <div class="panel-content">
+                <div class="global-controls">
+                    <div class="control-group">
+                        <label for="global-speed">Global Speed:</label>
+                        <input type="range" id="global-speed" min="0" max="5" step="0.1" value="1">
+                        <span id="global-speed-value">1.0x</span>
+                    </div>
+                </div>
+
+                <div class="planet-controls" id="planet-controls">
+                    <!-- Planet controls will be dynamically generated -->
+                </div>
+
+                <div class="view-controls">
+                    <h4>Camera Controls</h4>
+                    <div class="camera-buttons">
+                        <button class="btn camera-btn" data-target="sun">Sun</button>
+                        <button class="btn camera-btn" data-target="mercury">Mercury</button>
+                        <button class="btn camera-btn" data-target="venus">Venus</button>
+                        <button class="btn camera-btn" data-target="earth">Earth</button>
+                        <button class="btn camera-btn" data-target="mars">Mars</button>
+                        <button class="btn camera-btn" data-target="jupiter">Jupiter</button>
+                        <button class="btn camera-btn" data-target="saturn">Saturn</button>
+                        <button class="btn camera-btn" data-target="uranus">Uranus</button>
+                        <button class="btn camera-btn" data-target="neptune">Neptune</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Panel -->
+        <div id="info-panel" class="info-panel">
+            <h3 id="planet-name">Solar System</h3>
+            <div id="planet-info">
+                <p>Explore our solar system in 3D! Use your mouse to navigate around and click on planets to learn more.</p>
+                <p><strong>Controls:</strong></p>
+                <ul>
+                    <li>Left click + drag: Rotate view</li>
+                    <li>Right click + drag: Pan</li>
+                    <li>Scroll: Zoom in/out</li>
+                    <li>Click planets: Focus camera</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
